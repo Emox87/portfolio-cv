@@ -32,6 +32,24 @@ const themesArr = [
     "--left-side-progressbar-color": "#757575",
     "--right-side-paragraph-color": "#333",
   },
+  {
+    "--body-background-color": "#4CAF50",
+    "--container-background-color": "#fff",
+    "--left-side-background-color": "#212121",
+    "--right-side-position-color": "#8BC34A",
+    "--left-side-icon-color": "#8BC34A",
+    "--left-side-progressbar-color": "#4CAF50",
+    "--right-side-paragraph-color": "#333",
+  },
+  {
+    "--body-background-color": "#E040FB",
+    "--container-background-color": "#fff",
+    "--left-side-background-color": "#7B1FA2",
+    "--right-side-position-color": "#7B1FA2",
+    "--left-side-icon-color": "#E1BEE7",
+    "--left-side-progressbar-color": "#E040FB",
+    "--right-side-paragraph-color": "#333",
+  },
 ];
 
 // Random Number fom 0 to max

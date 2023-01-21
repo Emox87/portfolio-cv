@@ -1,0 +1,241 @@
+// Container
+.container {
+  background-color: var(--container-background-color);
+  min-height: 100rem;
+  max-width: 100rem;
+  margin: 5rem auto;
+  box-shadow: 0 3.5rem 5.5rem rgba($color-black, 0.5);
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+// Left side
+.left-side {
+  background-color: var(--left-side-background-color);
+  color: $color-white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__avatar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__img {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--body-background-color);
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: all 0.8s;
+
+    &:hover {
+      transform: rotate(360deg);
+      filter: grayscale(0%);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name-heading {
+    color: var(--left-side-text-color);
+    font-size: 2.5em;
+    letter-spacing: 0.3rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+    animation: moveInLeft 0.8s ease-out;
+
+    span {
+      font-size: 0.8em;
+      font-weight: 300;
+    }
+  }
+
+  &__contactInfo {
+    padding-top: 6rem;
+    font-size: 1rem;
+
+    ul {
+      list-style-type: none;
+      font-size: 1.5rem;
+
+      li {
+        margin: 3rem 0;
+        display: flex;
+        align-items: flex-start;
+
+        span {
+          i {
+            width: 100%;
+          }
+
+          &.text {
+            font-weight: 100;
+            display: inline-block;
+          }
+
+          // height: 2.5rem;
+          // align-self: center;
+        }
+
+        .icon {
+          color: var(--left-side-icon-color);
+          margin-right: 2rem;
+        }
+
+        a:link,
+        a:visited {
+          text-decoration: none;
+          color: $color-white;
+        }
+
+        a:hover,
+        a:active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__technologies {
+    padding-top: 3rem;
+    &-icons {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      i {
+        color: var(--left-side-icon-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+
+  &__languages {
+    margin-bottom: 4rem;
+    p {
+      font-size: 1.25rem;
+    }
+
+    &-language-level {
+      @include knowledgeLevel;
+
+      &--100 {
+        @include knowledgeLevel;
+        width: 100%;
+      }
+
+      &--75 {
+        @include knowledgeLevel;
+        width: 75%;
+      }
+
+      &--50 {
+        @include knowledgeLevel;
+        width: 50%;
+      }
+
+      &--35 {
+        @include knowledgeLevel;
+        width: 35%;
+      }
+
+      &--25 {
+        @include knowledgeLevel;
+        width: 25%;
+      }
+    }
+  }
+
+  &__interests {
+    font-size: 1.5rem;
+    ul {
+      list-style-type: none;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2rem 0;
+      }
+
+      .icon {
+        i {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Right Side
+.right-side {
+  padding: 2rem;
+  position: relative;
+
+  #btn-change-theme {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--left-side-background-color);
+      color: white;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__aboutme {
+    font-size: 1.5rem;
+  }
+
+  &__box {
+    color: var(--right-side-year-company-color);
+    font-size: 1.5rem;
+    display: flex;
+    margin: 2rem 0;
+  }
+
+  &__year-company {
+    min-width: 15rem;
+    color: inherit;
+  }
+
+  &__text {
+    h4 {
+      color: var(--right-side-position-color);
+    }
+    color: var(--right-side-paragraph-color);
+  }
+}

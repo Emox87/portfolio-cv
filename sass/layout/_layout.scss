@@ -117,6 +117,7 @@
 
   &__technologies {
     padding-top: 3rem;
+
     &-icons {
       font-size: 1.5rem;
       display: flex;
@@ -136,6 +137,7 @@
 
   &__languages {
     margin-bottom: 4rem;
+
     p {
       font-size: 1.25rem;
     }
@@ -172,6 +174,7 @@
 
   &__interests {
     font-size: 1.5rem;
+
     ul {
       list-style-type: none;
 
@@ -193,13 +196,13 @@
 
 // Right Side
 .right-side {
-  padding: 2rem;
+  padding: 7rem;
   position: relative;
 
   #btn-change-theme {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2rem;
+    right: 2rem;
     margin-top: 1rem;
     margin-right: 1rem;
     padding: 0.5rem;
@@ -218,6 +221,7 @@
 
   &__aboutme {
     font-size: 1.5rem;
+    text-align: justify;
   }
 
   &__box {
@@ -233,9 +237,12 @@
   }
 
   &__text {
+    text-align: justify;
+
     h4 {
       color: var(--right-side-position-color);
     }
+
     color: var(--right-side-paragraph-color);
   }
 }

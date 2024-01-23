@@ -89,7 +89,7 @@ u.margin-top-medium {
   80% { }
   100% { } }
 
-@keyframes profileRotate {}.container {
+.container {
   background-color: var(--container-background-color);
   min-height: 100rem;
   max-width: 100rem;
@@ -187,33 +187,11 @@ u.margin-top-medium {
     .left-side__languages-language-level {
       margin: 1.5rem 0 2rem;
       background-color: var(--left-side-icon-color);
-      height: 2.5rem; }
-      .left-side__languages-language-level--100 {
-        margin: 1.5rem 0 2rem;
-        background-color: var(--left-side-icon-color);
-        height: 2.5rem;
-        width: 100%; }
-      .left-side__languages-language-level--75 {
-        margin: 1.5rem 0 2rem;
-        background-color: var(--left-side-icon-color);
-        height: 2.5rem;
-        width: 75%; }
-      .left-side__languages-language-level--50 {
-        margin: 1.5rem 0 2rem;
-        background-color: var(--left-side-icon-color);
-        height: 2.5rem;
-        width: 50%; }
-      .left-side__languages-language-level--35 {
-        margin: 1.5rem 0 2rem;
-        background-color: var(--left-side-icon-color);
-        height: 2.5rem;
-        width: 35%; }
-      .left-side__languages-language-level--25 {
-        margin: 1.5rem 0 2rem;
-        background-color: var(--left-side-icon-color);
-        height: 2.5rem;
-        width: 25%; }
+      height: 2.5rem;
+      border-radius: 10px;
+      width: 50%; }
   .left-side__interests {
+    margin-top: 4rem;
     font-size: 1.5rem; }
     .left-side__interests ul {
       list-style-type: none; }
@@ -226,8 +204,9 @@ u.margin-top-medium {
         font-size: 2rem; }
 
 .right-side {
-  padding: 7rem;
-  position: relative; }
+  padding: 3rem;
+  position: relative;
+  font-size: 1.25rem; }
   .right-side #btn-change-theme {
     position: absolute;
     top: 2rem;
@@ -243,18 +222,28 @@ u.margin-top-medium {
     .right-side #btn-change-theme:active {
       transform: translateY(2px); }
   .right-side__aboutme {
-    font-size: 1.5rem;
+    margin-top: 4rem;
+    font-size: 1.25rem;
     text-align: justify; }
   .right-side__box {
     color: var(--right-side-year-company-color);
     font-size: 1.5rem;
     display: flex;
-    margin: 2rem 0; }
+    margin: 6rem 0; }
+    .right-side__box:not(:last-child) {
+      border-bottom: 1px dashed silver;
+      padding-bottom: 4rem; }
   .right-side__year-company {
-    min-width: 15rem;
+    min-width: 13rem;
     color: inherit; }
   .right-side__text {
     text-align: justify;
+    font-size: 1em;
     color: var(--right-side-paragraph-color); }
     .right-side__text h4 {
+      margin-bottom: 2rem;
+      font-size: 1.75rem;
       color: var(--right-side-position-color); }
+    .right-side__text ul,
+    .right-side__text p {
+      font-size: .85em; }

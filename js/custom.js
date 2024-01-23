@@ -4,6 +4,15 @@ const r = document.querySelector(":root");
 // Get the button element
 const btn = document.getElementById("btn-change-theme");
 
+function setLevels() {
+  const levelElements = document.querySelectorAll(
+    "div.left-side__languages-language-level"
+  );
+  for (let el = 0; el <= levelElements.length; el++) {
+    console.log(el.dataset.level);
+  }
+}
+
 const themesArr = [
   {
     "--body-background-color": "lightblue",
@@ -77,6 +86,7 @@ function changeRandomTheme(themeIndex) {
 
 window.onload = () => {
   localStorage.setItem("currentThemeIndex", 0);
+  setLevels();
 };
 
 btn.addEventListener("click", () =>

@@ -8,8 +8,10 @@ function setLevels() {
   const levelElements = document.querySelectorAll(
     "div.left-side__languages-language-level"
   );
-  for (let el = 0; el <= levelElements.length; el++) {
-    console.log(el.dataset.level);
+  for (let index = 0; index < levelElements.length; index++) {
+    levelElements[index].style.width = `${Number(
+      levelElements[index].dataset.level
+    )}%`;
   }
 }
 
@@ -84,11 +86,13 @@ function changeRandomTheme(themeIndex) {
   }
 }
 
+// On Page Load
 window.onload = () => {
   localStorage.setItem("currentThemeIndex", 0);
   setLevels();
 };
 
+// Button theme event listener --> changing themes
 btn.addEventListener("click", () =>
   changeRandomTheme(localStorage["currentThemeIndex"])
 );

@@ -146,7 +146,7 @@
   }
 
   &__languages {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     p {
       font-size: 1.25rem;
@@ -158,24 +158,26 @@
     }
   }
 
-  &__interests {
-    margin-top: 4rem;
+  &__softskills {
+    margin-top: 2rem;
     font-size: 1.5rem;
 
     ul {
       list-style-type: none;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: flex-start;
 
       li {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 2rem 0;
-      }
-
-      .icon {
-        i {
-          font-size: 2rem;
-        }
+        padding: 0.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        background-color: $color-white;
+        color: var(--left-side-background-color);
+        flex-grow: 1;
+        margin: 0 1rem 1rem 0;
+        border-radius: .5rem;
       }
     }
   }

@@ -90,6 +90,7 @@ function changeRandomTheme(themeIndex) {
 window.onload = () => {
   localStorage.setItem("currentThemeIndex", 0);
   setLevels();
+  AOS.init();
 };
 
 // Button theme event listener --> changing themes

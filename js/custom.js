@@ -1,8 +1,10 @@
 // Get the root element
 const r = document.querySelector(":root");
 
+const themesButtons = document.getElementById("themesContainer");
+
 // Get the button element
-const btn = document.getElementById("btn-change-theme");
+// const btn = document.getElementById("btn-change-theme");
 
 function setLevels() {
   const levelElements = document.querySelectorAll(
@@ -63,37 +65,26 @@ const themesArr = [
   },
 ];
 
-// Random Number fom 0 to max
-function randomNumber(max) {
-  return Math.floor(Math.random() * max);
-}
-
-// Changing random themes
-function changeRandomTheme(themeIndex) {
-  const currentThemeIndex = themesArr.indexOf(themesArr[themeIndex]);
-  let randThemeIndex;
-
-  do {
-    randThemeIndex = randomNumber(themesArr.length);
-  } while (currentThemeIndex === randThemeIndex);
-
-  if (currentThemeIndex != randThemeIndex) {
-    localStorage.setItem("currentThemeIndex", randThemeIndex);
-    const themesObj = themesArr[randThemeIndex];
-    for (let property in themesObj) {
-      r.style.setProperty(property, themesObj[property]);
-    }
+function changeTheme(themeIndex = 0) {
+  const themesObj = themesArr[themeIndex];
+  for (let property in themesObj) {
+    r.style.setProperty(property, themesObj[property]);
   }
+  localStorage.setItem("activeTheme", themeIndex);
 }
 
 // On Page Load
 window.onload = () => {
-  localStorage.setItem("currentThemeIndex", 0);
+  if (localStorage.getItem("activeTheme") !== null) {
+    changeTheme(localStorage.getItem("activeTheme"));
+  }
   setLevels();
   AOS.init();
 };
 
-// Button theme event listener --> changing themes
-btn.addEventListener("click", () =>
-  changeRandomTheme(localStorage["currentThemeIndex"])
-);
+for (const btn of themesButtons.children) {
+  btn.addEventListener("click", () => {
+    console.log(btn.dataset.colorIndex);
+    changeTheme(btn.dataset.colorIndex);
+  });
+}

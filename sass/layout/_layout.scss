@@ -5,6 +5,7 @@
   max-width: 100rem;
   margin: 5rem auto;
   box-shadow: 0 3.5rem 5.5rem rgba($color-black, 0.5);
+  overflow: hidden;
 
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -83,8 +84,6 @@
     font-size: 1rem;
     display: flex;
     flex-flow: column nowrap;
-
-
 
     ul {
       list-style-type: none;
@@ -232,6 +231,43 @@
     }
   }
 
+  &__themes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    & > div:nth-child(even) {
+      margin: 0 1rem;
+    }
+
+    & > * {
+      &:hover {
+        border: 3px solid rgb(112, 117, 117);
+        cursor: pointer;
+      }
+    }
+
+    &--1 {
+      @include themeButton(#003147);
+    }
+
+    &--2 {
+      @include themeButton(#E91E63);
+    }
+
+    &--3 {
+      @include themeButton(#FF5722);
+    }
+
+    &--4 {
+      @include themeButton(#4CAF50);
+    }
+
+    &--5 {
+      @include themeButton(#7B1FA2);
+    }
+  }
+
   &__aboutme {
     margin-top: 4rem;
     font-size: 1.25rem;
@@ -247,6 +283,7 @@
     color: var(--right-side-year-company-color);
     font-size: 1.5rem;
     display: flex;
+    flex-flow: column nowrap;
     margin: 6rem 0;
 
     &:not(:last-child) {
@@ -256,26 +293,28 @@
   }
 
   &__year-company {
-    min-width: 13rem;
     color: inherit;
   }
 
   &__text {
     text-align: justify;
     font-size: 1em;
-
+    color: var(--right-side-paragraph-color);
 
     h4 {
-      margin-bottom: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       font-size: 1.75rem;
       color: var(--right-side-position-color);
+    }
+
+    ul {
+      list-style-type: none;
     }
 
     ul,
     p {
       font-size: .85em;
     }
-
-    color: var(--right-side-paragraph-color);
   }
 }

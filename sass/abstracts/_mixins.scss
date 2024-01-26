@@ -19,8 +19,33 @@ breakpoint argument choices:
 */
 @mixin respond($breakpoint) {
   @if $breakpoint ==phone {
-    @media (max-width: 600px) {
-      @content
+    @media (max-width: 37.5em) {
+      @content;
     }
   }
+
+  @if $breakpoint ==tablet-portret {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tablet-landscape {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
+
+@mixin themeButton($color) {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: $color;
 }

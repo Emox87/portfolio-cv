@@ -325,4 +325,24 @@
       font-size: .85em;
     }
   }
+
+  &__taglist {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    align-items: center;
+    font-size: 1rem;
+
+
+    &--item {
+      background-color: var(--left-side-background-color);
+      color: white;
+      padding: .35rem;
+      flex-grow: 1;
+      border-radius: 0.5rem;
+      margin: 0.25rem 0.25rem 0 0;
+      text-align: center;
+    }
+  }
 }

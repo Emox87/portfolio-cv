@@ -3,3 +3,24 @@
   background-color: var(--left-side-icon-color);
   height: 2.5rem;
 }
+
+/* Media Query Manager
+0 - 600 Phone
+600 - 900 Tablet Portrait
+900 - 1200 Tablet Landscape
+[1200 - 1800] is where my styles apply
+1800+ Big Desktop
+
+breakpoint argument choices:
+- phone
+- tablet-portret
+- tablet-landscape
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint ==phone {
+    @media (max-width: 600px) {
+      @content
+    }
+  }
+}

@@ -21,8 +21,18 @@
 html {
   // 1rem is equal to 10px
   font-size: 62.5%;
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
+
+  @include respond(phone) {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+  }
 }

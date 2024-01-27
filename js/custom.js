@@ -73,29 +73,29 @@ function changeTheme(themeIndex = 0) {
   localStorage.setItem("activeTheme", themeIndex);
 }
 
-async function generatePdf() {
-  /*
-  HTML + CSS --> PNG (html2canvas)
-  PNG --> ADD TO PDF (jsPDF)
-  Download PDF (jsPDF)
-  */
-  let jsPDF = window.jspdf.jsPDF;
-  document.getElementById("downloadBtn").innerHTML = "Generating PDF";
+// async function generatePdf() {
+//   /*
+//   HTML + CSS --> PNG (html2canvas)
+//   PNG --> ADD TO PDF (jsPDF)
+//   Download PDF (jsPDF)
+//   */
+//   let jsPDF = window.jspdf.jsPDF;
+//   document.getElementById("downloadBtn").innerHTML = "Generating PDF";
 
-  // Downloading
-  let downloading = document.getElementById("container");
-  let doc = new jsPDF();
+//   // Downloading
+//   let downloading = document.getElementById("container");
+//   let doc = new jsPDF();
 
-  await html2canvas(downloading, {
-    allowTaint: true,
-    useCORS: true,
-  }).then((canvas) => {
-    // Canvas convert to png
-    doc.addImage(canvas.toDataURL("image/jpeg"), "JPEG", 0, 0);
-  });
-  console.log("PDF was generated and saved!");
-  doc.save("Emil-Tsvetanov-CV.pdf");
-}
+//   await html2canvas(downloading, {
+//     allowTaint: true,
+//     useCORS: true,
+//   }).then((canvas) => {
+//     // Canvas convert to png
+//     doc.addImage(canvas.toDataURL("image/jpeg"), "JPEG", 0, 0);
+//   });
+//   console.log("PDF was generated and saved!");
+//   doc.save("Emil-Tsvetanov-CV.pdf");
+// }
 
 for (const btn of themesButtons.children) {
   btn.addEventListener("click", () => {
@@ -103,10 +103,6 @@ for (const btn of themesButtons.children) {
     changeTheme(btn.dataset.colorIndex);
   });
 }
-
-// document.getElementById("downloadBtn").addEventListener("click", () => {
-//   generatePdf();
-// });
 
 // On Page Load
 window.onload = () => {
@@ -116,9 +112,3 @@ window.onload = () => {
   setLevels();
   AOS.init();
 };
-
-window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("downloadBtn").addEventListener("click", () => {
-    generatePdf();
-  });
-});

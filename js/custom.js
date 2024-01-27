@@ -3,8 +3,8 @@ const r = document.querySelector(":root");
 
 const themesButtons = document.getElementById("themesContainer");
 
-// Get the button element
-// const btn = document.getElementById("btn-change-theme");
+// Get the download button element
+const downloadBtn = document.getElementById("downloadBtn");
 
 function setLevels() {
   const levelElements = document.querySelectorAll(
@@ -32,7 +32,7 @@ const themesArr = [
     "--container-background-color": "#fff",
     "--left-side-background-color": "#E91E63",
     "--right-side-position-color": "#E91E63",
-    "--left-side-icon-color": "#212121",
+    "--left-side-icon-color": "#F8BBD0",
     "--left-side-progressbar-color": "#C2185B",
     "--right-side-paragraph-color": "#333",
   },
@@ -41,7 +41,7 @@ const themesArr = [
     "--container-background-color": "#fff",
     "--left-side-background-color": "#FF5722",
     "--right-side-position-color": "#FF5722",
-    "--left-side-icon-color": "#212121",
+    "--left-side-icon-color": "#FFCCBC",
     "--left-side-progressbar-color": "#757575",
     "--right-side-paragraph-color": "#333",
   },
@@ -73,6 +73,41 @@ function changeTheme(themeIndex = 0) {
   localStorage.setItem("activeTheme", themeIndex);
 }
 
+async function generatePdf() {
+  /*
+  HTML + CSS --> PNG (html2canvas)
+  PNG --> ADD TO PDF (jsPDF)
+  Download PDF (jsPDF)
+  */
+  let jsPDF = window.jspdf.jsPDF;
+  document.getElementById("downloadBtn").innerHTML = "Generating PDF";
+
+  // Downloading
+  let downloading = document.getElementById("container");
+  let doc = new jsPDF();
+
+  await html2canvas(downloading, {
+    allowTaint: true,
+    useCORS: true,
+  }).then((canvas) => {
+    // Canvas convert to png
+    doc.addImage(canvas.toDataURL("image/jpeg"), "JPEG", 0, 0);
+  });
+  console.log("PDF was generated and saved!");
+  doc.save("Emil-Tsvetanov-CV.pdf");
+}
+
+for (const btn of themesButtons.children) {
+  btn.addEventListener("click", () => {
+    console.log(btn.dataset.colorIndex);
+    changeTheme(btn.dataset.colorIndex);
+  });
+}
+
+// document.getElementById("downloadBtn").addEventListener("click", () => {
+//   generatePdf();
+// });
+
 // On Page Load
 window.onload = () => {
   if (localStorage.getItem("activeTheme") !== null) {
@@ -82,9 +117,8 @@ window.onload = () => {
   AOS.init();
 };
 
-for (const btn of themesButtons.children) {
-  btn.addEventListener("click", () => {
-    console.log(btn.dataset.colorIndex);
-    changeTheme(btn.dataset.colorIndex);
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("downloadBtn").addEventListener("click", () => {
+    generatePdf();
   });
-}
+});

@@ -18,7 +18,21 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- HTML TO PDF Library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -28,9 +42,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body id="body">
     <!-- CONTAINER -->
-    <main class="container">
+    <main class="container" id="container">
       <!-- LEFT SIDE -->
       <div class="left-side">
         <!-- AVATAR BOX -->
@@ -58,6 +72,7 @@
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
         >
+          <button id="downloadBtn">Download CV</button>
           <h2 class="title u-margin-bottom-small">Contact Info</h2>
           <ul>
             <li>
@@ -863,6 +878,7 @@
       </section>
       <!-- END RIGHT SIDE -->
     </main>
-    <script src="js/custom.js" defer></script>
+    <!-- <script src="js/html2pdf.js"></script> -->
+    <script src="js/custom.js"></script>
   </body>
 </html>

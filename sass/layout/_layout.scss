@@ -82,17 +82,39 @@
   }
 
   &__contactInfo {
-    padding-top: 6rem;
+    padding-top: 4rem;
     font-size: 1rem;
     display: flex;
     flex-flow: column nowrap;
+
+    button {
+      width: 70%;
+      margin: 0 0 4rem;
+      align-self: center;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      transition: all .2s;
+      font-weight: bold;
+      color: var(--left-side-background-color);
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--left-side-icon-color);
+      }
+
+      &:active {
+        transform: translateY(3px);
+      }
+    }
 
     ul {
       list-style-type: none;
       font-size: 1.5rem;
 
       @include respond(phone) {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       li {
@@ -109,9 +131,6 @@
             font-weight: 100;
             display: inline-block;
           }
-
-          // height: 2.5rem;
-          // align-self: center;
         }
 
         .icon {

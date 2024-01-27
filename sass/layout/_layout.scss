@@ -82,30 +82,39 @@
   }
 
   &__contactInfo {
-    padding-top: 4rem;
+    padding-top: 6rem;
     font-size: 1rem;
     display: flex;
     flex-flow: column nowrap;
 
-    button {
+    a.download {
       width: 70%;
-      margin: 0 0 4rem;
+      margin: 0 0 6rem;
       align-self: center;
-      padding: 0.5rem;
+      padding: 1rem;
       border-radius: 1rem;
       border: none;
       outline: none;
       transition: all .2s;
+      font-size: 1.25rem;
       font-weight: bold;
+      text-align: center;
+      background-color: white;
       color: var(--left-side-background-color);
+      text-decoration: none;
 
+      // color: var(--left-side-background-color);
       &:hover {
         cursor: pointer;
         background-color: var(--left-side-icon-color);
+        transform: translateY(-3px);
+        color: white;
       }
 
+      &:visited,
       &:active {
         transform: translateY(3px);
+        color: var(--left-side-background-color);
       }
     }
 

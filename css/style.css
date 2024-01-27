@@ -178,26 +178,33 @@ u.margin-top-medium {
       font-size: 0.8em;
       font-weight: 300; }
   .left-side__contactInfo {
-    padding-top: 4rem;
+    padding-top: 6rem;
     font-size: 1rem;
     display: flex;
     flex-flow: column nowrap; }
-    .left-side__contactInfo button {
+    .left-side__contactInfo a.download {
       width: 70%;
-      margin: 0 0 4rem;
+      margin: 0 0 6rem;
       align-self: center;
-      padding: 0.5rem;
+      padding: 1rem;
       border-radius: 1rem;
       border: none;
       outline: none;
       transition: all .2s;
+      font-size: 1.25rem;
       font-weight: bold;
-      color: var(--left-side-background-color); }
-      .left-side__contactInfo button:hover {
+      text-align: center;
+      background-color: white;
+      color: var(--left-side-background-color);
+      text-decoration: none; }
+      .left-side__contactInfo a.download:hover {
         cursor: pointer;
-        background-color: var(--left-side-icon-color); }
-      .left-side__contactInfo button:active {
-        transform: translateY(3px); }
+        background-color: var(--left-side-icon-color);
+        transform: translateY(-3px);
+        color: white; }
+      .left-side__contactInfo a.download:visited, .left-side__contactInfo a.download:active {
+        transform: translateY(3px);
+        color: var(--left-side-background-color); }
     .left-side__contactInfo ul {
       list-style-type: none;
       font-size: 1.5rem; }

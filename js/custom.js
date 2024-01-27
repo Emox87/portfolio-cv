@@ -65,7 +65,7 @@ const themesArr = [
   },
 ];
 
-function changeTheme(themeIndex = 0) {
+function changeTheme(themeIndex = 1) {
   const themesObj = themesArr[themeIndex];
   for (let property in themesObj) {
     r.style.setProperty(property, themesObj[property]);
@@ -73,33 +73,8 @@ function changeTheme(themeIndex = 0) {
   localStorage.setItem("activeTheme", themeIndex);
 }
 
-// async function generatePdf() {
-//   /*
-//   HTML + CSS --> PNG (html2canvas)
-//   PNG --> ADD TO PDF (jsPDF)
-//   Download PDF (jsPDF)
-//   */
-//   let jsPDF = window.jspdf.jsPDF;
-//   document.getElementById("downloadBtn").innerHTML = "Generating PDF";
-
-//   // Downloading
-//   let downloading = document.getElementById("container");
-//   let doc = new jsPDF();
-
-//   await html2canvas(downloading, {
-//     allowTaint: true,
-//     useCORS: true,
-//   }).then((canvas) => {
-//     // Canvas convert to png
-//     doc.addImage(canvas.toDataURL("image/jpeg"), "JPEG", 0, 0);
-//   });
-//   console.log("PDF was generated and saved!");
-//   doc.save("Emil-Tsvetanov-CV.pdf");
-// }
-
 for (const btn of themesButtons.children) {
   btn.addEventListener("click", () => {
-    console.log(btn.dataset.colorIndex);
     changeTheme(btn.dataset.colorIndex);
   });
 }
@@ -108,6 +83,8 @@ for (const btn of themesButtons.children) {
 window.onload = () => {
   if (localStorage.getItem("activeTheme") !== null) {
     changeTheme(localStorage.getItem("activeTheme"));
+  } else {
+    changeTheme();
   }
   setLevels();
   AOS.init();

@@ -65,12 +65,18 @@ const themesArr = [
   },
 ];
 
-function changeTheme(themeIndex = 1) {
+function changeTheme(themeIndex = 0) {
   const themesObj = themesArr[themeIndex];
   for (let property in themesObj) {
     r.style.setProperty(property, themesObj[property]);
   }
   localStorage.setItem("activeTheme", themeIndex);
+  getCorrectPDF(localStorage.getItem("activeTheme"));
+}
+
+function getCorrectPDF(index) {
+  downloadBtn.setAttribute("href", `docs/${index}.pdf`);
+  console.log(downloadBtn.getAttribute("href"));
 }
 
 for (const btn of themesButtons.children) {

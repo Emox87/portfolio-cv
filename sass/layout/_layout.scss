@@ -330,6 +330,12 @@
 
   &__year-company {
     color: inherit;
+
+    &:first-child {
+      i {
+        margin-right: .35rem;
+      }
+    }
   }
 
   &__text {

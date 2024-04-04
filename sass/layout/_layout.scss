@@ -95,27 +95,30 @@
       border-radius: 1rem;
       border: none;
       outline: none;
-      transition: all .2s;
       font-size: 1.25rem;
       font-weight: bold;
       text-align: center;
       background-color: white;
       color: var(--left-side-background-color);
       text-decoration: none;
+      transition: transform .2s;
 
       // color: var(--left-side-background-color);
       &:hover {
         cursor: pointer;
         background-color: var(--left-side-icon-color);
-        transform: translateY(-3px);
         color: white;
       }
 
       &:visited,
       &:active {
-        transform: translateY(3px);
         color: var(--left-side-background-color);
       }
+
+      &:active {
+        transform: translateY(3px);
+      }
+
     }
 
     ul {

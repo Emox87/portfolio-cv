@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --body-background-color: lightblue;
+  --container-background-color: white;
+  --left-side-background-color: #003147;
+  --left-side-text-color: white;
+  --left-side-icon-color: #03a9f4;
+  --left-side-progressbar-color: #0475fa;
+  --right-side-background-color: white;
+  --right-side-year-company-color: #848c90;
+  --right-side-position-color: #2a7da2;
+  --right-side-paragraph-color: #333;
+}
+
+html {
+  // 1rem is equal to 10px 10/16 = 62.5
+  font-size: 62.5%;
+
+  @include respond(big-desktop) {
+    font-size: 70% // 1rem = 12px, 12/16 = 75%
+  }
+
+  @include respond(tablet-landscape) {
+    font-size: 65%;
+  }
+
+  @include respond(tablet-portrait) {
+    font-size: 60%; // 1rem=8px, 8/16=50%
+  }
+
+  @include respond(phone) {
+    font-size: 55%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  @include respond(phone) {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+  }
+}

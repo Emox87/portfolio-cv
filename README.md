@@ -1,2 +1,1 @@
-# portfolio-cv
-Emil Tsvetanov | Portfolio | CV
+# Emil Tsvetanov | CV

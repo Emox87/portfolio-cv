@@ -1,0 +1,51 @@
+@mixin knowledgeLevel {
+  margin: 1.5rem 0 2rem;
+  background-color: var(--left-side-icon-color);
+  height: 2.5rem;
+}
+
+/* Media Query Manager
+0 - 600 Phone
+600 - 900 Tablet Portrait
+900 - 1200 Tablet Landscape
+[1200 - 1800] is where my styles apply
+1800+ Big Desktop
+
+breakpoint argument choices:
+- phone
+- tablet-portret
+- tablet-landscape
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint ==phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tablet-portret {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tablet-landscape {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
+
+@mixin themeButton($color) {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: $color;
+}
